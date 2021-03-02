@@ -37,10 +37,6 @@ gem "faker", "~> 1.8"
 gem "ruby-progressbar"
 gem "sentry-raven"
 
-gem "letter_opener_web", "~> 1.3"
-
-gem "sprockets", "~> 3.7"
-
 group :development, :test do
   gem "byebug", "~> 11.0", platform: :mri
 
@@ -49,6 +45,7 @@ group :development, :test do
 end
 
 group :development do
+  gem "letter_opener_web", "~> 1.3"
   gem "listen", "~> 3.1"
   gem "spring", "~> 2.0"
   gem "spring-watcher-listen", "~> 2.0"
@@ -56,7 +53,6 @@ group :development do
 end
 
 group :production do
-  # gem "rubocop-rails"
   gem "passenger"
   gem "fog-aws"
   gem "dalli"
