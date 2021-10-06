@@ -1257,7 +1257,4 @@ RSpec/LeakyConstantDeclaration:
 RSpec/DescribedClass:
   Enabled: false
 
-RSpec/MultipleMemoizedHelpers:
-  Max: 15
-
 inherit_from: .rubocop_rails.yml
