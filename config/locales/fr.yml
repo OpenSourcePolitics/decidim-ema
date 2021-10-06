@@ -11,6 +11,10 @@ fr:
   decidim:
     accessibility:
       skip_button: Passer au contenu principal
+    accountability:
+      results:
+        filters:
+          scopes: Secteurs
     admin:
       participatory_space_private_users:
         create:
