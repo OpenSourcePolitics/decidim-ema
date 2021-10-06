@@ -36,15 +36,15 @@ en:
         name: Identity Verification Form
       osp_authorization_workflow:
         name: Authorization procedure
+    searches:
+      filters_small_view:
+        filter_by: Filter by
     verifications:
       authorizations:
         first_login:
           actions:
             osp_authorization_handler: Verify with the identity verification form
             osp_authorization_workflow: Verify with the identity verification form
-    searches:
-      filters_small_view:
-        filter_by: Filter by
   faker:
     address:
       country_code: '["EN", "EN0", "EN1", "EN2", "EN3", "EN4", "EN5", "EN6", "EN7", "EN8", "EN9"]'
