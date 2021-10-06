@@ -42,6 +42,9 @@ fr:
           actions:
             osp_authorization_handler: Vérifier avec le formulaire de vérification de l'identité
             osp_authorization_workflow: Vérifier avec le formulaire de vérification de l'identité
+    searches:
+      filters_small_view:
+        filter_by: Filtrer par
   faker:
     address:
       country_code:
