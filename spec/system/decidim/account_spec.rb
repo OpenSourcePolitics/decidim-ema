@@ -17,7 +17,7 @@ describe "Account", type: :system do
       visit decidim.root_path
 
       within_user_menu do
-        find("a", text: "Account").click
+        find("a", text: "My account").click
       end
 
       expect(page).to have_css("form.edit_user")
