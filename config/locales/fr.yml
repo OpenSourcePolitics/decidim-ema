@@ -11,6 +11,10 @@ fr:
   decidim:
     accessibility:
       skip_button: Passer au contenu principal
+    accountability:
+      results:
+        filters:
+          scopes: Secteurs
     admin:
       participatory_space_private_users:
         create:
@@ -32,6 +36,9 @@ fr:
         name: Formulaire de vérification d'identité
       osp_authorization_workflow:
         name: Procédure d'autorisation
+    searches:
+      filters_small_view:
+        filter_by: Filtrer par
     verifications:
       authorizations:
         first_login:

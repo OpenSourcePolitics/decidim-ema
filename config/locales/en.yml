@@ -11,6 +11,10 @@ en:
   decidim:
     accessibility:
       skip_button: Skip button
+    accountability:
+      results:
+        filters:
+          scopes: Scopes
     admin:
       participatory_space_private_users:
         create:
@@ -32,6 +36,9 @@ en:
         name: Identity Verification Form
       osp_authorization_workflow:
         name: Authorization procedure
+    searches:
+      filters_small_view:
+        filter_by: Filter by
     verifications:
       authorizations:
         first_login:
