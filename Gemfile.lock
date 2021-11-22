@@ -357,7 +357,7 @@ GEM
       sassc (~> 2.3)
     declarative-builder (0.1.0)
       declarative-option (< 0.2.0)
-    declarative-option (0.1.1)
+    declarative-option (0.1.0)
     descendants_tracker (0.0.4)
       thread_safe (~> 0.3, >= 0.3.1)
     devise (4.8.0)
@@ -497,7 +497,7 @@ GEM
     http_parser.rb (0.6.0)
     i18n (1.8.11)
       concurrent-ruby (~> 1.0)
-    i18n-tasks (0.9.35)
+    i18n-tasks (0.9.34)
       activesupport (>= 4.0.2)
       ast (>= 2.1.0)
       erubi
