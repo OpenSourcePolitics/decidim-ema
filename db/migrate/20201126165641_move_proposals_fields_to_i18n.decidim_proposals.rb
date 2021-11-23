@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # This migration comes from decidim_proposals (originally 20200708091228)
 
 class MoveProposalsFieldsToI18n < ActiveRecord::Migration[5.2]
@@ -27,8 +28,7 @@ class MoveProposalsFieldsToI18n < ActiveRecord::Migration[5.2]
           locale => proposal.body
         }
 
-        proposal.update_column("new_title", proposal.new_title)
-        proposal.update_column("new_body", proposal.new_body)
+        proposal.save(validate: false)
       end
     end
 
