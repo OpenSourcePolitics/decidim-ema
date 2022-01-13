@@ -9,6 +9,7 @@ ruby RUBY_VERSION
 gem "decidim", git: "https://github.com/decidim/decidim.git", branch: DECIDIM_VERSION
 
 gem "decidim-decidim_awesome", "~> 0.7.0"
+gem "decidim-phone_authorization_handler", git: "https://github.com/OpenSourcePolitics/decidim-module_phone_authorization_handler", branch: "release/0.24-stable"
 gem "decidim-term_customizer", git: "https://github.com/mainio/decidim-module-term_customizer.git", branch: "master"
 
 gem "bootsnap", "~> 1.4"

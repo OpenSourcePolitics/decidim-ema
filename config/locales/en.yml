@@ -57,6 +57,9 @@ en:
         update:
           invalid: There was a problem updating the meeting.
           success: You have updated the meeting successfully.
+    searches:
+      filters_small_view:
+        filter_by: Filter by
     verifications:
       authorizations:
         first_login:
