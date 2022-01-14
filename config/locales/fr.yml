@@ -57,6 +57,9 @@ fr:
         update:
           invalid: Il y a eu une erreur lors de la mise à jour de la rencontre.
           success: La rencontre a été mise à jour avec succès.
+    searches:
+      filters_small_view:
+        filter_by: Filter by
     verifications:
       authorizations:
         first_login:

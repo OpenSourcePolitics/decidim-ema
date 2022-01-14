@@ -1,4 +1,12 @@
 GIT
+  remote: https://github.com/OpenSourcePolitics/decidim-module_phone_authorization_handler
+  revision: 4015887bc5e39cd086fc30a198d285edfccfb348
+  branch: release/0.24-stable
+  specs:
+    decidim-phone_authorization_handler (0.24)
+      decidim-core (~> 0.24)
+
+GIT
   remote: https://github.com/decidim/decidim.git
   revision: 91f9643d29e9c1e03e14c3ab728e7b784dbf4d0b
   branch: release/0.24-stable
@@ -929,6 +937,7 @@ DEPENDENCIES
   decidim!
   decidim-decidim_awesome (~> 0.7.0)
   decidim-dev!
+  decidim-phone_authorization_handler!
   decidim-term_customizer!
   dotenv-rails
   faker (~> 2.14)

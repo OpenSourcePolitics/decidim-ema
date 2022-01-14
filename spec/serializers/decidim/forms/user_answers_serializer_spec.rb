@@ -60,19 +60,13 @@ module Decidim
         create :answer, :with_attachments, questionnaire: questionnaire, question: files_question, user: user, body: nil
       end
 
-      before do
-        questions.each_with_index do |question, idx|
-          question.update!(position: idx)
-        end
-      end
-
       describe "#serialize" do
         let(:serialized) { subject.serialize }
 
         it "includes the answer for each question" do
           questions.each_with_index do |question, idx|
             expect(serialized).to include(
-              "#{question.position + 1}. #{translated(question.body, locale: I18n.locale)}" => answers[idx].body
+              "#{idx + 1}. #{translated(question.body, locale: I18n.locale)}" => answers[idx].body
             )
           end
 
@@ -88,19 +82,19 @@ module Decidim
           serialized_files_answer = files_answer.attachments.map(&:url)
 
           expect(serialized).to include(
-            "#{multichoice_question.position + 1}. #{translated(multichoice_question.body, locale: I18n.locale)}" => multichoice_answer_choices.map(&:body)
+            "4. #{translated(multichoice_question.body, locale: I18n.locale)}" => multichoice_answer_choices.map(&:body)
           )
 
           expect(serialized).to include(
-            "#{singlechoice_question.position + 1}. #{translated(singlechoice_question.body, locale: I18n.locale)}" => ["Free text"]
+            "5. #{translated(singlechoice_question.body, locale: I18n.locale)}" => ["Free text"]
           )
 
           expect(serialized).to include(
-            "#{matrixmultiple_question.position + 1}. #{translated(matrixmultiple_question.body, locale: I18n.locale)}" => serialized_matrix_answer
+            "6. #{translated(matrixmultiple_question.body, locale: I18n.locale)}" => serialized_matrix_answer
           )
 
           expect(serialized).to include(
-            "#{files_question.position + 1}. #{translated(files_question.body, locale: I18n.locale)}" => serialized_files_answer
+            "7. #{translated(files_question.body, locale: I18n.locale)}" => serialized_files_answer
           )
         end
 
@@ -115,35 +109,6 @@ module Decidim
           it "the creation of the answer" do
             key = I18n.t(:created_at, scope: "decidim.forms.user_answers_serializer")
             expect(serialized[key]).to eq an_answer.created_at.to_s(:db)
-          end
-
-          it "the IP hash of the user" do
-            key = I18n.t(:ip_hash, scope: "decidim.forms.user_answers_serializer")
-            expect(serialized[key]).to eq an_answer.ip_hash
-          end
-
-          it "the user status" do
-            key = I18n.t(:user_status, scope: "decidim.forms.user_answers_serializer")
-            expect(serialized[key]).to eq "Registered"
-          end
-
-          context "when user is not registered" do
-            before do
-              questionnaire.answers.first.update!(decidim_user_id: nil)
-            end
-
-            it "the user status is unregistered" do
-              key = I18n.t(:user_status, scope: "decidim.forms.user_answers_serializer")
-              expect(serialized[key]).to eq "Unregistered"
-            end
-          end
-        end
-
-        context "when conditional question is not answered by user" do
-          let!(:conditional_question) { create(:questionnaire_question, :conditioned, questionnaire: questionnaire, position: 4) }
-
-          it "includes conditional question as empty" do
-            expect(serialized).to include("5. #{translated(conditional_question.body, locale: I18n.locale)}" => "")
           end
         end
       end
